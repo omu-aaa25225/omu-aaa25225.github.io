@@ -11,14 +11,19 @@
                 var hours = now.getHours();
                 var minutes = now.getMinutes();
                 var seconds = now.getSeconds();
+                var year= now.getFullYear();
+                var month= 1+now.getMonth();
+                var date = now.getDate();
 
                 //一桁の場合は０を付ける
                 if(hours<10) hours='0'+hours;
                 if(minutes<10)minutes='0'+minutes;
                 if(seconds<10)seconds='0'+seconds;
+                if(month<10)month='0'+month;
+                if(date<10)date='0'+date;
 
                 //表示
-                var timeString  = hours+':'+minutes+':'+seconds;
+                var timeString  =  year+'/'+month+'/'+date+' '+hours+':'+minutes+':'+seconds;
                 document.getElementById('clock').innerHTML=timeString;
             }
             //１秒ごとにupdateClockを実行
@@ -30,7 +35,7 @@
 <body>
     <h1>現在時刻</h1>
         <div id="clock" style="font-size:50px;font-weight:500;color:rgb(66, 125, 90);">
-            00:00:00
+            0000/00/00 00:00:00
         </div>
     <h>Webシステム構築基礎第２回課題</h>
     <br>氏名：岩崎結萌<br>学籍番号：AAA25225<br>
